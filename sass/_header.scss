@@ -1,0 +1,105 @@
+@import "variables";
+@import 'breakpoints';
+.header{
+    position: relative;
+    min-height: $static-header-height;
+    background: url(../imgs/plane.jpg) no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: $container-padding;
+    @include ContainerResponsiveSizes;
+    @media screen and(max-width: $sm){
+        background-position:bottom;
+        min-height: 100vh;
+    }
+
+    .header_inner{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        .header_logo{
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        .header_nav{
+            align-self: flex-end;
+            justify-self: flex-end;
+            .header_nav-list{
+                li{
+                    display: inline-block;
+                    margin-left: 1rem;
+                    cursor: pointer;
+                    padding-top: .1rem;
+                    padding-bottom: .1rem;
+                }
+            }
+            .header_nav-list :first-child{
+                border-bottom: 2px solid #fff;
+            }
+        }
+        .header_language{
+            position: absolute;
+            right: 0;
+            top: -10px;
+            .dropdown{
+                position: relative;
+                .dropdown_triger{
+                    background-color: transparent;
+                    border: none;
+                    color: #fff;
+                    font-size: 1rem;
+                    &:after{
+                    content: url(../imgs/arrow-down.svg);
+                    display: inline-block;
+                    vertical-align: bottom;
+                    margin-left: .5rem;
+                    width: 1rem;
+                    height: 1rem;
+                   
+                }
+                 @media screen and(max-width: $md){
+                        margin-right: .4rem;
+                    }
+                }
+                .dropdown_list{
+                    position: absolute;
+                    right: -10px;
+                    background-color: #fff;
+                    margin-top: .7rem;
+                    padding: 1rem ;
+                    width: max-content;
+                    border-radius: 10px;
+                    display: none;
+                    &::after{
+                        content: "";
+                        width: 0; 
+                        height: 0; 
+                        border: 8px solid transparent;
+                        border-bottom-color: #fff;
+                        border-top: 0;
+                        margin-left: -22px ;
+                        margin-right: -22px;
+                        position: absolute;
+                        top: -.45rem;
+                        right: 22.99%;
+                    }
+                    li{
+                        margin-right: 1rem;
+                     a{
+                        color: $secondary-color;
+                    }
+                    } 
+                    @media screen and (max-width: $md){
+                        right: -5px;
+                    }
+                }
+                .dropdown_list :nth-child(even){
+                    margin-top: 7px;
+                    margin-bottom: 7px;
+                }
+            
+            }
+        }
+    }
+        
+}

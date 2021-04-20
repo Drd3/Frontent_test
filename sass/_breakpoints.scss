@@ -1,0 +1,18 @@
+$sm: 576px;
+$md: 768px;
+$lg: 1000px;
+$xl: 1200px;
+$xxl: 2560px;
+
+@mixin ContainerResponsiveSizes {
+    @media screen and (max-width: $md){
+        padding: 1rem .5rem;
+    }
+    @media (min-width: $md) and (max-width: $lg){
+        padding: 1rem 1rem;
+    }
+    @media screen and (min-width: $xxl){
+        padding: 1rem 30rem;;
+    }
+
+}
